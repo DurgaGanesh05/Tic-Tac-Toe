@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Game Grid */
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 12px;
+}
+
+/* Game Buttons */
+.box {
+    all: unset;
+    background-color: #2f2f4f;
+    border-radius: 14px;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 🔥 X & O styling */
+    font-size: 4rem;       /* BIG symbols */
+    font-weight: 900;      /* EXTRA BOLD */
+    line-height: 1;
+    letter-spacing: 2px;
+
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.box:hover {
+    background-color: #3d3d6b;
+}
+
+.box:active {
+    transform: scale(0.95);
+}
+
+.box:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+
+/* Reset Button */
+.reset-button {
+    margin-top: 35px;
+    padding: 16px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ff4757;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #ff6b81;
+}
+
+.reset-button:active {
+    transform: scale(0.96);
+}
+
+/* Winner container (hidden initially) */
+.msg-container {
+    margin-bottom: 20px;
+    padding: 18px 26px;
+    text-align: center;
+    background: #1f1f38;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    display: none;
+}
+
+/* Winner text */
+.win-ann {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1abc9c;
+    margin-bottom: 14px;
+}
+
+/* New Game button */
+.newGame-btn {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.newGame-btn:hover {
+    background-color: #16a085;
+}
+
+.newGame-btn:active {
+    transform: scale(0.95);
+}
+
+/* Show when winner is declared */
+.show {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
